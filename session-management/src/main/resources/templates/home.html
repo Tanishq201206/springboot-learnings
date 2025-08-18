@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home Page</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+<h3>Welcome, <span th:text="${username}">User</span>!</h3>
+<p>Session ID: <span th:text="${sessionId}">[session-id]</span></p>
+
+<form method="post" th:action="@{/logout}">
+    <button type="submit">Logout</button>
+</form>
+</body>
+</html>
