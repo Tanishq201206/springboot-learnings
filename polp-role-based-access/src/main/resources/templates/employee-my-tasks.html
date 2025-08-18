@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>My Tasks</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+<h1>My Assigned Tasks</h1>
+
+<div th:if="${tasks != null and #lists.isEmpty(tasks)}">
+    <p>No tasks assigned yet.</p>
+</div>
+
+<div th:each="task : ${tasks}">
+    <h3 th:text="${task.title}">Task Title</h3>
+    <p><strong>Description:</strong> <span th:text="${task.description}"></span></p>
+    <p><strong>Due Date:</strong> <span th:text="${task.dueDate}"></span></p>
+
+    <form th:action="@{/employee/submit-report}" method="post">
+        <input type="hidden" name="taskId" th:value="${task.id}" />
+        <label for="report">Submit Report:</label><br>
+        <textarea name="report" rows="4" cols="50" required></textarea><br>
+        <button type="submit" class="btn">Submit</button>
+    </form>
+    <hr/>
+</div>
+
+<a th:href="@{/dashboard}" class="btn">Back to Dashboard</a>
+</body>
+</html>

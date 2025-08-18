@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/extras/spring-security">
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+
+</head>
+<body>
+<h1>Welcome, <span th:text="${username}"></span></h1>
+<p>Welcome, <span sec:authentication="name"></span>!</p>
+
+
+<div class="navbar">
+    <!-- ADMIN Links -->
+    <a th:if="${#authorization.expression('hasRole(''ADMIN'')')}" th:href="@{/admin/users}">Manage Users</a>
+    <a th:if="${#authorization.expression('hasRole(''ADMIN'')')}" th:href="@{/admin/tasks}">Manage All Tasks</a>
+    <a th:if="${#authorization.expression('hasRole(''ADMIN'')')}" th:href="@{/admin/tasks/create}">Create New Task</a>
+
+    <!-- EMPLOYEE Links -->
+    <a th:if="${#authorization.expression('hasRole(''EMPLOYEE'')')}" th:href="@{/employee/my-tasks}">My Tasks</a>
+    <a th:if="${#authorization.expression('hasRole(''EMPLOYEE'')')}" th:href="@{/employee/reports}">Reports</a>
+
+    <!-- MANAGER Links -->
+    <a th:if="${#authorization.expression('hasRole(''MANAGER'')')}" th:href="@{/manager/team-tasks}">View Team Tasks</a>
+    <a th:if="${#authorization.expression('hasRole(''MANAGER'')')}" th:href="@{/manager/reports}">Review Reports</a>
+</div>
+
+
+
+<p>Roles:
+    <span sec:authorize="hasRole('ADMIN')">[ADMIN]</span>
+    <span sec:authorize="hasRole('EMPLOYEE')">[EMPLOYEE]</span>
+    <span sec:authorize="hasRole('MANAGER')">[MANAGER]</span>
+</p>
+<form th:action="@{/logout}" method="post">
+    <button type="submit">Logout</button>
+</form>
+
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!-- src/main/resources/templates/login.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login Page</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+
+</head>
+<body>
+<h2>Login</h2>
+<form th:action="@{/login}" method="post">
+    <input type="text" name="username" placeholder="Username" required />
+    <input type="password" name="password" placeholder="Password" required />
+    <button type="submit">Login</button>
+
+
+    <div th:if="${errorMsg}" style="color:red;">
+        <p th:text="${errorMsg}"></p>
+    </div>
+
+
+    <div th:if="${logoutMsg}" style="color:green;">
+        <p th:text="${logoutMsg}"></p>
+    </div>
+</form>
+
+</body>
+</html>

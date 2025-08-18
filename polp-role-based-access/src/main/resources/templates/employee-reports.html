@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>My Reports</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+<h1>My Submitted Reports</h1>
+
+<div th:if="${tasks != null and #lists.isEmpty(tasks)}">
+    <p>No reports submitted yet.</p>
+</div>
+
+<table th:if="${tasks != null and !#lists.isEmpty(tasks)}" border="1">
+    <thead>
+    <tr>
+        <th>Task Title</th>
+        <th>Report</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="task : ${tasks}" th:if="${task.report != null}">
+        <td th:text="${task.title}"></td>
+        <td th:text="${task.report}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<a th:href="@{/dashboard}" class="btn">Back to Dashboard</a>
+</body>
+</html>

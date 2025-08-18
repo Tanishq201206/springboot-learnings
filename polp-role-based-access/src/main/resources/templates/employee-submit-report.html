@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Submit Task Report</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<h2>Submit Report for: <span th:text="${task.title}"></span></h2>
+
+<form th:action="@{/employee/report/submit}" method="post">
+    <input type="hidden" name="taskId" th:value="${task.id}" />
+    <textarea name="reportText" rows="8" cols="60" placeholder="Enter your report here..."></textarea>
+    <br/>
+    <button type="submit">Submit Report</button>
+</form>
+
+</body>
+</html>

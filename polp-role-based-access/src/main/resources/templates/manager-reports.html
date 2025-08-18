@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Review Reports - Manager</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<div class="container">
+    <h1>Employee Reports</h1>
+
+    <!-- Filter Form -->
+    <form method="get" th:action="@{/manager/reports}" class="filter-form">
+        <label for="username">Filter by Employee:</label>
+        <select name="username" id="username">
+            <option value="">-- All Employees --</option>
+            <option th:each="user : ${users}"
+                    th:value="${user.username}"
+                    th:text="${user.username}"
+                    th:selected="${user.username == selectedUsername}">
+            </option>
+        </select>
+        <button type="submit" class="nav-button">Filter</button>
+    </form>
+
+    <!-- Report Table -->
+    <table class="styled-table">
+        <thead>
+        <tr>
+            <th>Task Title</th>
+            <th>Assigned To</th>
+            <th>Due Date</th>
+            <th>Report</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="task : ${tasks}">
+            <td th:text="${task.title}">Title</td>
+            <td th:text="${task.assignedTo.username}">Assigned</td>
+            <td th:text="${task.dueDate}">Due Date</td>
+            <td th:text="${task.report}">Report</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a th:href="@{/dashboard}" class="nav-button">Back to Dashboard</a>
+</div>
+</body>
+</html>

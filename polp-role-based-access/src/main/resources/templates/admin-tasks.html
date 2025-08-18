@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>All Tasks</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+
+</head>
+<body>
+<h2>All Tasks</h2>
+<!-- templates/admin-tasks.html -->
+<table>
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Due Date</th>
+        <th>Assigned To</th>
+        <th>Report</th> <!-- ✅ New column -->
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="task : ${tasks}">
+        <td th:text="${task.title}">Title</td>
+        <td th:text="${task.description}">Description</td>
+        <td th:text="${task.dueDate}">Due Date</td>
+        <td th:text="${task.assignedTo.username}">User</td>
+        <td th:text="${task.report != null ? task.report : '—'}">Report</td> <!-- ✅ Display report or em dash -->
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
