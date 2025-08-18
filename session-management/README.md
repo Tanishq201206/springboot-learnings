@@ -41,9 +41,6 @@ The project includes these Thymeleaf views:
 - `home.html`
 - `login.html`
 - `register.html`
-- `home.html`
-- `login.html`
-- `register.html`
 
 Typical endpoints:
 - `/register` (GET/POST)
