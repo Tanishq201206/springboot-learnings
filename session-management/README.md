@@ -59,10 +59,6 @@ Typical endpoints:
 
 ## 🖼️ Screenshots
 Add PNGs for each page here so the README renders them:
-
-![home](assets/home.png)
-![login](assets/login.png)
-![register](assets/register.png)
 ![home](assets/home.png)
 ![login](assets/login.png)
 ![register](assets/register.png) 
