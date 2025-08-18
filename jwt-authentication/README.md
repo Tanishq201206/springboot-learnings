@@ -173,10 +173,5 @@ curl -X POST http://localhost:8081/auth/refresh   -H "Content-Type: application/
 
 ---
 
-## 📝 License
-MIT (or your choice).
-
----
-
 ## 🙌 Credits
 Learning project by **Tanishq Singh**.
