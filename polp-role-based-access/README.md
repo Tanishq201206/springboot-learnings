@@ -86,7 +86,6 @@ Go to **http://localhost:8085**
 ## 🖼️ Screenshots
 Place PNGs in `polp-role-based-access/assets/` so they render here.
 
-```md
 ![login](assets/login.png)
 ![dashboard](assets/dashboard.png)
 ![admin-users](assets/admin-users.png)
@@ -97,7 +96,7 @@ Place PNGs in `polp-role-based-access/assets/` so they render here.
 ![employee-my-tasks](assets/employee-my-tasks.png)
 ![employee-submit-report](assets/employee-submit-report.png)
 ![employee-reports](assets/employee-reports.png)
-```
+
 
 See **assets/SCREENSHOTS_GUIDE.md** for exact URLs to open each page before capturing.
 
