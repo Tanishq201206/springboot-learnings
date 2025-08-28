@@ -59,11 +59,12 @@ Typical endpoints:
 
 ## 🖼️ Screenshots
 Add PNGs for each page here so the README renders them:
+### HOME
 ![home](assets/home.png)
+### LOGIN
 ![login](assets/login.png)
+### REGISTER 
 ![register](assets/register.png) 
-
-See **assets/SCREENSHOTS_GUIDE.md** for exact instructions and URLs per page.
 
 ---
 
