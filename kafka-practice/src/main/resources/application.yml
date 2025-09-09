@@ -16,7 +16,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/kafka_db
     username: root
-    password: root
+    password: <YOURPASSSWORD>
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
